@@ -1,182 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAT Cargo VAD LLC</title>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            color: #333;
-        }
-        nav {
-            background: #000;
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-        }
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            padding: 80px 20px;
-            background: #111;
-            color: #fff;
-            min-height: 100vh;
-            animation: fadeIn 2s ease-in-out;
-        }
-        .hero-text {
-            max-width: 500px;
-            padding: 20px;
-            animation: slideInLeft 1.5s ease;
-        }
-        .hero-text h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        .hero-text p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-        .hero-img img {
-            max-width: 400px;
-            width: 100%;
-            border-radius: 10px;
-            animation: slideInRight 1.5s ease;
-        }
-        .section {
-            padding: 60px 20px;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s ease;
-        }
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .section h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-        .section p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #555;
-        }
-        .contact {
-            background: #e9e9e9;
-            padding: 60px 20px;
-        }
-        footer {
-            background: #000;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FR SERVICES 05 — Spécialité Bâtiment</title>
+  <style>
+    :root{
+      --slate:#0f1720;     /* dark header/nav */
+      --card:#ffffff;      /* card bg        */
+      --page:#f6f8fb;      /* page bg        */
+      --accent:#f59e0b;    /* construction orange */
+      --text:#20242a;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--page);color:var(--text)}
+    a{color:var(--slate);text-decoration:none}
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideInLeft {
-            from { transform: translateX(-50px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        @keyframes slideInRight {
-            from { transform: translateX(50px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-    </style>
+    header{background:var(--slate);color:#fff;text-align:center;padding:28px 16px;border-bottom:5px solid var(--accent)}
+    header h1{margin:0;font-size:2.2rem}
+    header p{margin:6px 0 0;opacity:.95}
+
+    nav{background:#111827;text-align:center;padding:12px}
+    nav a{color:#fff;margin:0 14px;font-weight:700}
+    nav a:hover{color:var(--accent)}
+
+    /* hero small image + intro box */
+    .hero{max-width:1100px;margin:22px auto;display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:center;padding:0 14px}
+    .hero img{width:100%;border-radius:12px;border:4px solid var(--accent)}
+    .hero .box{background:var(--card);border-left:6px solid var(--accent);border-radius:12px;padding:16px}
+
+    .section{max-width:1100px;margin:22px auto;background:var(--card);padding:22px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+    .section h2{margin:0 0 12px;color:var(--slate)}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    ul{margin:0;padding-left:18px;line-height:1.8}
+
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:14px}
+    .gallery img{width:100%;border-radius:10px;border:2px solid var(--accent)}
+
+    .cta{margin-top:12px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{background:var(--accent);color:#111;padding:12px 16px;border-radius:10px;font-weight:800}
+    .btn.secondary{background:#fff;color:var(--slate);border:2px solid var(--slate)}
+
+    footer{background:var(--slate);color:#fff;text-align:center;padding:18px;margin-top:26px;border-top:5px solid var(--accent)}
+
+    @media(max-width:900px){.hero{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">PAT Cargo VAD LLC</div>
+  <header>
+    <h1>FR SERVICES 05</h1>
+    <p>Other Specialty Trade Contractors • Provence-Alpes-Côte d’Azur</p>
+  </header>
+
+  <nav>
+    <a href="#about">À propos</a>
+    <a href="#services">Services</a>
+    <a href="#galerie">Galerie</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="https://avatars.mds.yandex.net/i?id=056594326308ee665536a0546c826e73-4374574-images-thumbs&ref=rim&n=33&w=339&h=200" alt="Chantier construction">
+    <div class="box">
+      <h2 style="margin:0 0 6px">Expertise • Sécurité • Délais respectés</h2>
+      <p>Interventions de spécialité bâtiment : second œuvre, maintenance de structures, finitions et petits travaux techniques pour pros et particuliers.</p>
+      <div class="cta">
+        <a class="btn" href="tel:+33745398559">Appeler : +33 7 45 39 85 59</a>
+        <a class="btn secondary" href="mailto:admin@tapexy.shop">Écrire : admin@tapexy.shop</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- À PROPOS -->
+  <section id="about" class="section">
+    <h2>À propos</h2>
+    <div class="two-col">
+      <p><strong>FR SERVICES 05</strong> intervient autour de <strong>Le Beausset (83)</strong> avec une équipe réactive et outillée pour des chantiers propres et sécurisés.</p>
+      <p>Adresse : <strong>La Videlsy, 631 Chemin de Ste Brigitte, 83330 Le Beausset, Provence-Alpes-Côte d’Azur, France</strong>.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <h2>Nos services</h2>
+    <ul>
+      <li>Finitions bâtiment (plâtre, joints, reprises)</li>
+      <li>Petite maçonnerie & réparations</li>
+      <li>Pose d’équipements techniques (selon besoin)</li>
+      <li>Entretien & maintenance de sites</li>
+      <li>Interventions rapides et programmées</li>
+    </ul>
+  </section>
+
+  <!-- GALERIE -->
+  <section id="galerie" class="section">
+    <h2>Galerie</h2>
+    <div class="gallery">
+      <img src="https://avatars.mds.yandex.net/i?id=c291debfae5de5b7d612e199b83b8afe15ac7c70-9881038-images-thumbs&ref=rim&n=33&w=269&h=200" alt="Travaux 1">
+      <img src="https://avatars.mds.yandex.net/i?id=5c25d1d4a4fc59d4bf9520d9b649a358-5469231-images-thumbs&ref=rim&n=33&w=366&h=200" alt="Travaux 2">
+      <img src="https://avatars.mds.yandex.net/i?id=e5b41c11b06058bea092cd55088c1ac4e35b7871-7750971-images-thumbs&ref=rim&n=33&w=267&h=200" alt="Travaux 3">
+      <img src="https://avatars.mds.yandex.net/i?id=902b2d15a21a2b61da2d1e1e80d26cdf-5229425-images-thumbs&n=13" alt="Travaux 4">
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <div class="two-col">
+      <div>
+        <p>📧 <strong>Email :</strong> <a href="mailto:admin@tapexy.shop">admin@tapexy.shop</a></p>
+        <p>📞 <strong>Téléphone :</strong> <a href="tel:+33745398559">+33 7 45 39 85 59</a></p>
+        <p>📍 <strong>Adresse :</strong> La Videlsy, 631 Chemin de Ste Brigitte, 83330 Le Beausset</p>
+      </div>
+      <div>
+        <p><em>Horaires</em></p>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+          <li>Lun–Ven : 8h00 – 18h00</li>
+          <li>Samedi : 9h00 – 15h00</li>
+          <li>Dimanche : Fermé</li>
         </ul>
-    </nav>
-
-    <div class="hero" id="home">
-        <div class="hero-text">
-            <h1>PAT Cargo VAD LLC</h1>
-            <p>Your trusted partner in transportation and warehousing. We provide reliable cargo services and storage solutions to meet your business needs with efficiency and care.</p>
-        </div>
-        <div class="hero-img">
-            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=934&q=80" alt="Cargo Services">
-        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="section" id="about">
-        <h2>About Us</h2>
-        <p>PAT Cargo VAD LLC is a Domestic LLC based in Arizona, offering specialized services in transportation and warehousing. With a focus on reliability and customer satisfaction, we have been serving businesses since 2021.</p>
-        <p><strong>Registered Address:</strong><br>
-        2902 W Sweetwater Ave, Apt 2190, Phoenix, AZ 85029, United States</p>
-    </div>
-
-    <div class="section contact" id="contact">
-        <h2>Contact Us</h2>
-        <p><strong>Email:</strong> <a href="mailto:contact@patcargovadllc.click">contact@patcargovadllc.click</a></p>
-        <p><strong>Agent Address:</strong><br>
-        2902 W Sweetwater Ave, Apt 2190, Phoenix, AZ 85029, United States</p>
-    </div>
-
-    <footer>
-        &copy; 2025 PAT Cargo VAD LLC. All rights reserved.
-    </footer>
-
-    <script>
-        // Intersection Observer for fade-in effect
-        const sections = document.querySelectorAll('.section');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+  <footer>
+    <p>&copy; 2025 FR SERVICES 05 — Spécialité Bâtiment</p>
+  </footer>
 
 </body>
 </html>
